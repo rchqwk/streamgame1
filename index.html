@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stream Block Breaker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- HUD Top -->
+      <div class="hud top-left draggable" id="sessionStats">
+        <div>Broken: <span id="brokenCount">0</span></div>
+        <div>Combo: <span id="comboLabel">—</span></div>
+        <div>Most used: <span id="mostUsed">—</span></div>
+      </div>
+      <div class="hud top-center draggable" id="likeHud">
+        <div class="like-counter">Likes: <span id="likeCount">0</span></div>
+        <div id="likePopups" class="popup-container"></div>
+      </div>
+      <div class="hud top-right draggable" id="recentCommands">
+        <div class="panel-title">Recent Commands</div>
+        <ul id="recentList"></ul>
+      </div>
+
+      <!-- Side Panel -->
+  <div class="hud side-left draggable" id="sidePanel">
+        <div class="panel">
+          <div class="panel-title">Recent Subs</div>
+          <ul id="recentSubs"></ul>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Top Chatters</div>
+          <ul id="topChatters"></ul>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Streak</div>
+          <div id="streakCounter">0</div>
+        </div>
+      </div>
+
+      <!-- Bottom Tips -->
+      <div class="hud bottom draggable" id="tipsBar">
+        <span id="tipText">Type 'skibidi' for dance block!</span>
+      </div>
+
+      <!-- Overlay for Combo announcements and names -->
+      <div id="overlayText" class="overlay-text"></div>
+
+      <!-- Canvas Stage -->
+      <div id="stageWrapper">
+        <canvas id="gameCanvas" width="1920" height="1080"></canvas>
+      </div>
+
+      <!-- Controls (for local testing) -->
+      <div class="controls draggable" id="controlsIsland">
+        <div class="controls-header">
+          <div class="title">Dev Tools</div>
+          <button id="controlsMinBtn" class="minimise">Minimise</button>
+        </div>
+        <div class="input-row">
+          <input id="usernameInput" type="text" placeholder="username" />
+          <input id="commandInput" type="text" placeholder="type command (e.g., skibidi, boom, 69, ❤️)" />
+          <button id="sendCommandBtn">Send</button>
+        </div>
+        <div class="input-row stacked">
+          <button id="likeBtn">Simulate Like</button>
+          <button id="subBtn">Simulate Sub</button>
+          <button id="memberBtn">Simulate Membership</button>
+          <button id="nukeBtn">Nuke</button>
+          <label class="toggle">
+            <input type="checkbox" id="muteToggle" /> Mute SFX
+          </label>
+        </div>
+        <div class="input-row stacked" id="tntVariants">
+          <div>TNT Variants</div>
+          <div class="grid">
+            <button id="tntVar0">Row Wipe</button>
+            <button id="tntVar1">Circle</button>
+            <button id="tntVar2">Adj→TNT</button>
+            <button id="tntVar3">Multi-Stage</button>
+            <button id="tntVar4">Cross</button>
+            <button id="tntVar5">Rainbow</button>
+            <button id="tntVar6">Acid Bomb</button>
+            <button id="tntVar7">Chaos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
